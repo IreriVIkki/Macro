@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class="container">
 
-<head>
-    <meta charset="UTF-8"> {% if id %}
-    <title>{{id}}</title>
-    {% else %}
-    <title>1234</title>
-    {% endif%}
-</head>
+    <!-- Poster background -->
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{movie.poster}}) no-repeat center center">
+        </div>
 
-<body>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
+            <h3>{{ movie.title }}</h3>
 
-</body>
+            <p class="overview"> {{ movie.overview }}</p>
+            <p class="ratings">
+                <b> {{ movie.vote_average }}</b> -
+                <i>{{ movie.vote_count}} votes </i>
+            </p>
 
-</html>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

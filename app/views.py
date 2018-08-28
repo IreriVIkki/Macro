@@ -1,6 +1,6 @@
-from flask import render_template
 from app import app
-from .request import get_movies
+from flask import render_template
+from .request import get_movies, get_movie
 
 
 # views
@@ -19,4 +19,7 @@ def index():
 
 @app.route('/movie/<int:movie_id>')
 def movie(movie_id):
-    return render_template('movie.html', id=movie_id)
+    movie = get_movie(movie_id)
+    title = f'{movie.title}'
+
+    return render_template('movie.html', title=title, movie=movie)

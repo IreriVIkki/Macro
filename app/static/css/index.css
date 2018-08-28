@@ -1,0 +1,7 @@
+html *li {
+    list-style: none;
+}
+
+.jumbotron {
+    border-radius: 0;
+}
